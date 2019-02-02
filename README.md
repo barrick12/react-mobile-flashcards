@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React Navtive App](https://github.com
 
 To install, type in the terminal:
 
-### 'npm install'
+### 'yarn install'
+
+To start, type in the terminal:
+
+### 'yarn install'
 
 This app has been tested on Android.
