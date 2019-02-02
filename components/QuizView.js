@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, AsyncStorage, Platform } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, AsyncStorage, Platform, Dimensions } from 'react-native'
 import { getDeck, setLocalNotification, clearLocalNotification} from '../utils/api'
 import { connect } from 'react-redux'
 import { white, black, blue, red, green } from '../utils/colors'
@@ -128,8 +128,8 @@ class QuizView extends React.Component {
     }
 
     questionsRemaining = (
-      <View style={[styles.item, {justifyContent:'flex-start', alignItems:'flex-start', width: 400}]}>
-        <Text style={{fontSize: 20}}>Questions: {currentCard + 1 }/{count}</Text>
+      <View style={[styles.item, {justifyContent:'flex-start', alignItems:'flex-start', width: Dimensions.get('window').width}]}>
+        <Text style={{fontSize: 20}}>Questions Left: {count - currentCard - 1 }/{count}</Text>
       </View>
     )
 
