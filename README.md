@@ -1,6 +1,6 @@
 This is the third Udacity React nano-degree project "Mobile Flashcards"
 
-This project was bootstrapped with [Create React Navtive App](https://github.com/react-community/create-react-native-app).
+This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 ## Available Scripts
 
