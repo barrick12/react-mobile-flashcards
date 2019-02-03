@@ -10,6 +10,6 @@ To install, type in the terminal:
 
 To start, type in the terminal:
 
-### 'yarn install'
+### 'yarn start'
 
 This app has been tested on Android.
