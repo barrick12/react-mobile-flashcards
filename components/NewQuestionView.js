@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, AsyncStorage, Platform, TextInput, KeyboardAvoidingView } from 'react-native'
+import { View, Text, StyleSheet, TextInput, KeyboardAvoidingView } from 'react-native'
 import { addCard } from '../actions/index'
 import { addCardToDeck } from '../utils/api'
 import { connect } from 'react-redux'
@@ -16,16 +16,14 @@ class NewDeckView extends React.Component {
       answer: ""
     }
 
-    this.setState = this.setState.bind(this);
-
   }
 
   onChangeQuestionTextInput = (text) => {
-     this.setState((state)=>{return{question: text}})
+     this.setState(()=>{return{question: text}})
    }
 
    onChangeAnswerTextInput = (text) => {
-      this.setState((state)=>{return{answer: text}} )
+      this.setState(()=>{return{answer: text}} )
     }
 
   onPressSumit = () => {
@@ -35,8 +33,6 @@ class NewDeckView extends React.Component {
       question: this.state.question,
       answer: this.state.answer,
     }
-
-    console.log("The card: ", card)
 
     addCardToDeck(id, card);
     dispatch(addCard(id, card));
@@ -76,8 +72,7 @@ class NewDeckView extends React.Component {
 
 }
 
-function mapStateToProps ({},{ navigation }) {
-  console.log("NewQuestionView id, count: ", navigation.state.params.id, navigation.state.params.count)
+function mapStateToProps ({},{ navigation }) {  
   return {
     id: navigation.state.params.id,
     count: navigation.state.params.count,

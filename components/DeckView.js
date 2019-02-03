@@ -1,9 +1,7 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, AsyncStorage, Platform, Animated } from 'react-native'
-//import { receiveDecks } from '../actions/index'
-import { getDecks } from '../utils/api'
+import { View, Text, StyleSheet, Animated } from 'react-native'
 import { connect } from 'react-redux'
-import { white, black, blue, red } from '../utils/colors'
+import { white, black, red } from '../utils/colors'
 import TextButton from './TextButton'
 
 class DeckView extends React.Component {
@@ -30,7 +28,6 @@ class DeckView extends React.Component {
     const { bounceValue } = this.state
 
     var count = data[id].questions.length;
-    console.log("DeckView: ", id, count )
 
     Animated.sequence([
           Animated.timing(bounceValue, { duration: 200, toValue: 1.1}),

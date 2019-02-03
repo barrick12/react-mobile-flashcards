@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, AsyncStorage, Platform, Dimensions } from 'react-native';
-import { getDecks, DECK_STORAGE_KEY } from '../utils/api'
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, Dimensions } from 'react-native';
+// import { getDecks } from '../utils/api'
 import { receiveDecks } from '../actions/index'
 import { connect } from 'react-redux'
 import { white, black, blue } from '../utils/colors'
@@ -45,7 +45,7 @@ class DeckList extends React.Component {
       }
 
     return(
-      <View styles ={styles.container}>        
+      <View styles ={styles.container}>
         {view}
       </View>
     )

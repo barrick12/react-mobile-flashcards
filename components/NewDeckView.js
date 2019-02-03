@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, AsyncStorage, Platform, TextInput, KeyboardAvoidingView } from 'react-native'
+import { View, Text, StyleSheet, TextInput, KeyboardAvoidingView } from 'react-native'
 import { addDeck } from '../actions/index'
 import { saveDeckTitle } from '../utils/api'
 import { connect } from 'react-redux'
@@ -20,7 +20,7 @@ class NewDeckView extends React.Component {
   }
 
   onChangeTextInput = (text) => {
-     this.setState((state)=>{return{text: text}} )
+     this.setState(()=>{return{text: text}} )
    }
 
   onPressSumit = () => {
@@ -33,9 +33,7 @@ class NewDeckView extends React.Component {
 
     navigation.navigate('DeckView', {id});
 
-    this.setState((state)=>{return{text: ""}} )
-
-    
+    this.setState(()=>{return{text: ""}} )
 
   }
 

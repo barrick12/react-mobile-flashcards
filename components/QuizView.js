@@ -1,6 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, AsyncStorage, Platform, Dimensions } from 'react-native'
-import { getDeck, setLocalNotification, clearLocalNotification} from '../utils/api'
+import { View, Text, StyleSheet, Dimensions } from 'react-native'
 import { connect } from 'react-redux'
 import { white, black, blue, red, green } from '../utils/colors'
 import TextButton from './TextButton'
@@ -22,32 +21,15 @@ class QuizView extends React.Component {
 
   }
 
-  componentDidMount(){
-    const { data, id, count } = this.props
-    console.log('QuizView: ', id, count);
-    // this.setState( (state) =>
-    //   { return {
-    //     data: data[id]['questions'],
-    //     currentCard: 0,
-    //     score: 0 }
-    //   },
-    //   () => console.log("QuizView State: ", this.state),
-    // )
-
-  }
-
   onPressCorrect = () => {
     this.setState((state)=>
-      {return { score: state.score + 1, currentCard: state.currentCard + 1, onQuestion: true  } },
-      ()=>console.log(this.state) )
+      {return { score: state.score + 1, currentCard: state.currentCard + 1, onQuestion: true  } } )
   }
 
 
   onPressIncorrect = () => {
     this.setState((state)=>
-      {return { currentCard: state.currentCard + 1, onQuestion: true  } },
-      ()=>console.log(this.state) )
-
+      {return { currentCard: state.currentCard + 1, onQuestion: true  } } )
   }
 
   onPressRestartQuiz = () => {
@@ -74,10 +56,6 @@ class QuizView extends React.Component {
     const { data, currentCard, score, onQuestion } = this.state
 
     if(this.state.currentCard + 1 > count) {
-
-      clearLocalNotification()
-      .then(setLocalNotification)
-
 
       return (
         <View style={styles.container}>
